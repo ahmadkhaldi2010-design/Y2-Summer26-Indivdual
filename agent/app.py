@@ -4,11 +4,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-client = Anthropic(api_key=os.getenv('ANTHROPIC_API_KEY'))
+client = Anthropic(
+    api_key=os.getenv("ANTHROPIC_API_KEY"),
+    base_url=os.getenv("ANTHROPIC_BASE_URL"),
+)
 
 def run_chat():
     print('You: (type exit to quit)')
-    system_message = "Your name is Ahmad. You are a good and friendly  and a smart assistant who helps students learn about technology and math. You explain things clearly and always encourage curiosity."
+    system_message = "Your name is Ahmad. You are a good and friendly and a smart assistant who helps students learn about technology and math. You explain things clearly and always encourage curiosity."
     history = []
 
     while True:
